@@ -25,10 +25,10 @@ def get_job(db: Session, job_id: str):
 
 def update_job_with_batch(db: Session, job_id: int, batch_status: str):
     job = db.query(Job).filter(Job.id == job_id).first()
-    
-    if batch_status == BatchStatus.COMPLETED or batch_status == BatchStatus.FAILED:
+
+    if batch_status in [BatchStatus.COMPLETED, BatchStatus.FAILED]:
         job.batches_processed += 1
-    
+
     if batch_status == BatchStatus.COMPLETED:
             job.batches_succeeded += 1
 
@@ -45,8 +45,7 @@ def update_job_with_batch(db: Session, job_id: int, batch_status: str):
     return job
 
 def update_job_total_batches(db: Session, job_id: int, total_batches: int):
-    job = db.query(Job).filter(Job.id == job_id).first()
-    if job:
+    if job := db.query(Job).filter(Job.id == job_id).first():
         job.total_batches = total_batches
         db.commit()
         db.refresh(job)
@@ -54,8 +53,7 @@ def update_job_total_batches(db: Session, job_id: int, total_batches: int):
     return None
 
 def update_job_status(db: Session, job_id: int, job_status: JobStatus):
-    job = db.query(Job).filter(Job.id == job_id).first()
-    if job:
+    if job := db.query(Job).filter(Job.id == job_id).first():
         job.job_status = job_status
         db.commit()
         db.refresh(job)

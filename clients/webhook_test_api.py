@@ -49,18 +49,14 @@ def validate():
     except json.JSONDecodeError:
         print("json error")
         return jsonify({"error": "Failed to decode the received data"}), 400
-    
+
     print("Received data")
     chunks = data.get('chunks')
 
     if not chunks:
         return jsonify({"error": "No chunks"}), 400
-    
-    valid_chunks = []
-    for i, chunk in enumerate(chunks):
-        if i % 2 == 0:
-            valid_chunks.append(chunk)
 
+    valid_chunks = [chunk for i, chunk in enumerate(chunks) if i % 2 == 0]
     print(valid_chunks)
     return jsonify({"valid_chunks": valid_chunks}), 200
 

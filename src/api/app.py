@@ -78,10 +78,9 @@ def get_job_status(job_id):
     vectorflow_key = request.headers.get('Authorization')
     if not vectorflow_key or not auth.validate_credentials(vectorflow_key):
         return jsonify({'error': 'Invalid credentials'}), 401
-    
+
     with get_db() as db:
-        job = job_service.get_job(db, job_id)
-        if job:
+        if job := job_service.get_job(db, job_id):
             return jsonify({'JobStatus': job.job_status.value}), 200
         else:
             return jsonify({'error': "Job not found"}), 404
@@ -92,14 +91,14 @@ def s3_presigned_url():
     vectorflow_request = VectorflowRequest(request)
     if not vectorflow_request.vectorflow_key or not auth.validate_credentials(vectorflow_request.vectorflow_key):
         return jsonify({'error': 'Invalid credentials'}), 401
-    
+
     if vectorflow_request.webhook_url and not vectorflow_request.webhook_key:
         return jsonify({'error': 'Webhook URL provided but no webhook key'}), 400
- 
+
     pre_signed_url = request.form.get('PreSignedURL')
     if not vectorflow_request.embeddings_metadata or not vectorflow_request.vector_db_metadata or (not vectorflow_request.vector_db_key and not os.getenv('LOCAL_VECTOR_DB')) or not pre_signed_url:
         return jsonify({'error': 'Missing required fields'}), 400
-    
+
     response = requests.get(pre_signed_url)
     file_name = get_s3_file_name(pre_signed_url)
 
@@ -111,18 +110,15 @@ def s3_presigned_url():
             file_content = response.text
             job = safe_db_operation(job_service.create_job, vectorflow_request, file_name)
             return jsonify({'message': f"Successfully added {batch_count} batches to the queue", 'JobID': job.id}), 200
-        
+
         elif mime_type == 'application/pdf':
             pdf_data = BytesIO(response.content)
             with fitz.open(stream=pdf_data, filetype='pdf') as doc:
-                file_content = ""
-                for page in doc:
-                    file_content += page.get_text()
-
+                file_content = "".join(page.get_text() for page in doc)
             job = safe_db_operation(job_service.create_job, vectorflow_request, file_name)
             batch_count = create_batches(file_content, job.id, vectorflow_request)
             return jsonify({'message': f"Successfully added {batch_count} batches to the queue", 'JobID': job.id}), 200
-        
+
         elif mime_type == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document':
             docx_data = BytesIO(response.content)
             doc = Document(docx_data)
@@ -131,7 +127,7 @@ def s3_presigned_url():
             job = safe_db_operation(job_service.create_job, vectorflow_request, file_name)
             batch_count = create_batches(file_content, job.id, vectorflow_request)
             return jsonify({'message': f"Successfully added {batch_count} batches to the queue", 'JobID': job.id}), 200
-        
+
         else:
             return jsonify({'error': 'Uploaded file is not a TXT, PDF, HTML or DOCX file'}), 400
     else:
@@ -140,7 +136,7 @@ def s3_presigned_url():
 def process_file(file, vectorflow_request):
     if file.filename.endswith('.txt'):
         file_content = file.read().decode('utf-8')
-    
+
     elif file.filename.endswith('.docx'):
         doc = Document(file)
         file_content = "\n".join([paragraph.text for paragraph in doc.paragraphs])
@@ -148,14 +144,14 @@ def process_file(file, vectorflow_request):
     elif file.filename.endswith('.md'):
         temp_file_path = Path('./temp_file.md')
         file.save(temp_file_path)
-            
+
         MarkdownReader = download_loader("MarkdownReader")
         loader = MarkdownReader()
         documents = loader.load_data(file=Path('./temp_file.md'))
 
         file_content = "\n".join([document.text for document in documents])
         temp_file_path.unlink()
-    
+
     elif file.filename.endswith('.html'):
         content = file.read().decode('utf-8')
         file_content = repr(content)
@@ -163,17 +159,14 @@ def process_file(file, vectorflow_request):
     else:
         pdf_data = BytesIO(file.read())
         with fitz.open(stream=pdf_data, filetype='pdf') as doc:
-            file_content = ""
-            for page in doc:
-                file_content += page.get_text()
-
+            file_content = "".join(page.get_text() for page in doc)
     job = safe_db_operation(job_service.create_job, vectorflow_request, file.filename)
     batch_count = create_batches(file_content, job.id, vectorflow_request)
     return batch_count, job.id
 
 def create_batches(file_content, job_id, vectorflow_request):
-    chunks = [chunk for chunk in split_file(file_content, vectorflow_request.lines_per_batch)]
-    
+    chunks = list(split_file(file_content, vectorflow_request.lines_per_batch))
+
     batches = [Batch(job_id=job_id, embeddings_metadata=vectorflow_request.embeddings_metadata, vector_db_metadata=vectorflow_request.vector_db_metadata) for _ in chunks]
     batches = safe_db_operation(batch_service.create_batches, batches)
 
@@ -265,10 +258,10 @@ def search_image():
     image_search_request = ImageSearchRequest._from_request(request)
     if not image_search_request.vectorflow_key or not auth.validate_credentials(image_search_request.vectorflow_key):
         return jsonify({'error': 'Invalid credentials'}), 401
- 
+
     if not image_search_request.vector_db_metadata or (not image_search_request.vector_db_key and not os.getenv('LOCAL_VECTOR_DB')):
         return jsonify({'error': 'Missing required fields'}), 400
-    
+
     if 'SourceData' not in request.files:
         return jsonify({'error': 'No file part in the request'}), 400
 
@@ -282,34 +275,53 @@ def search_image():
 
     if file_size > 2 * 1024 * 1024:
         return jsonify({'error': 'File is too large. VectorFlow currently only supports 2 MB files or less for images. Larger file support coming soon.'}), 413
-    
+
     # empty filename means no file was selected
     if file.filename == '':
         return jsonify({'error': 'No selected file'}), 400
-    
-    if file and (file.filename.endswith('.jpg') or file.filename.endswith('.jpeg') or file.filename.endswith('.png')):
-        try:
-            response = search_image(file, image_search_request)
 
-            if response.status_code == 200:
-                response_json = response.json()
-                if "vectors" in response_json:
-                    return jsonify({'message': f"Successfully fetched {image_search_request.top_k} results including vectors",
-                        'similar_images': response_json['similar_images'],
-                        'vectors': response_json['vectors']}), 200
-                else:
-                    return jsonify({'message': f"Successfully fetched {image_search_request.top_k} results", 
-                        'similar_images': response_json['similar_images']}), 200
-            else:
-                response_json = response.json()
-                error_message = response_json["error"]
-                return jsonify({'error': f"Attempt to fetch images similar to {file.filename} failed due to error: {error_message}"}), response.status_code
-        
-        except Exception as e:
-            logging.error(f"Attempt to fetch images similar to {file.filename} failed due to error: {e}")
-            return jsonify({'error': f"Attempt to fetch images similar to {file.filename} failed due to error: {e}"}), 400
-    else:
+    if (
+        not file
+        or not file.filename.endswith('.jpg')
+        and not file.filename.endswith('.jpeg')
+        and not file.filename.endswith('.png')
+    ):
         return jsonify({'error': 'Uploaded file is not a JPG, JPEG, or PNG file'}), 400
+    try:
+        response = search_image(file, image_search_request)
+
+        if response.status_code == 200:
+            response_json = response.json()
+            return (
+                (
+                    jsonify(
+                        {
+                            'message': f"Successfully fetched {image_search_request.top_k} results including vectors",
+                            'similar_images': response_json['similar_images'],
+                            'vectors': response_json['vectors'],
+                        }
+                    ),
+                    200,
+                )
+                if "vectors" in response_json
+                else (
+                    jsonify(
+                        {
+                            'message': f"Successfully fetched {image_search_request.top_k} results",
+                            'similar_images': response_json['similar_images'],
+                        }
+                    ),
+                    200,
+                )
+            )
+        else:
+            response_json = response.json()
+            error_message = response_json["error"]
+            return jsonify({'error': f"Attempt to fetch images similar to {file.filename} failed due to error: {error_message}"}), response.status_code
+
+    except Exception as e:
+        logging.error(f"Attempt to fetch images similar to {file.filename} failed due to error: {e}")
+        return jsonify({'error': f"Attempt to fetch images similar to {file.filename} failed due to error: {e}"}), 400
     
 def search_image(file, image_search_request):
     url = f"{os.getenv('IMAGE_SEARCH_URL')}/search"
@@ -322,12 +334,7 @@ def search_image(file, image_search_request):
     }
 
     try:
-        response = requests.post(
-            url=url, 
-            data=data, 
-            files=files
-        )
-        return response
+        return requests.post(url=url, data=data, files=files)
     except requests.RequestException as e:
         print(f"Error: {e}")
         return {"error": str(e)}, 500
@@ -336,16 +343,11 @@ def get_s3_file_name(pre_signed_url):
     parsed_url = urlparse(pre_signed_url)
     path_parts = parsed_url.path.lstrip('/').split('/')
 
-    # For the file name and not the full path:
-    file_name = path_parts[-1]
-    return file_name
+    return path_parts[-1]
 
 def is_valid_file_type(file):
     supported_types = ['.txt', '.docx', '.pdf', '.md', '.html']
-    for type in supported_types:
-        if file.filename.endswith(type):
-            return True
-    return False
+    return any(file.filename.endswith(type) for type in supported_types)
 
 if __name__ == '__main__':
    app.run(host='0.0.0.0', debug=True)

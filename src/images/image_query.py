@@ -48,8 +48,7 @@ def embed_image(image_bytes):
 
     # Get a vector from img2vec, returned as a torch FloatTensor
     vector_tensor = img2vec.get_vec(img, tensor=True)
-    embedding_list = transform_vector_to_list(vector_tensor)
-    return embedding_list
+    return transform_vector_to_list(vector_tensor)
 
 def transform_vector_to_list(vector):
     squeezed_tensor = vector.squeeze()
@@ -60,9 +59,8 @@ def search_vector_db(embedding, image_search_request):
     vector_db_metadata = image_search_request.vector_db_metadata
     if vector_db_metadata.vector_db_type == VectorDBType.PINECONE:
         return search_pinecone(embedding, image_search_request)
-    else:
-        logging.error('Unsupported vector DB type: %s', vector_db_metadata.vector_db_type.value)
-        return {"error": "Unsupported vector DB type"}
+    logging.error('Unsupported vector DB type: %s', vector_db_metadata.vector_db_type.value)
+    return {"error": "Unsupported vector DB type"}
     
 def search_pinecone(embedding, image_search_request):
     try:
@@ -71,8 +69,8 @@ def search_pinecone(embedding, image_search_request):
         if not index:
             logging.error(f"Index {image_search_request.vector_db_metadata.index_name} does not exist in environment {image_search_request.vector_db_metadata.environment}")
             return {"error": f"Index {image_search_request.vector_db_metadata.index_name} does not exist in environment {image_search_request.vector_db_metadata.environment}"}
-        
-        logging.info(f"Starting pinecone query")
+
+        logging.info("Starting pinecone query")
         query_results = index.query(
             vector=embedding,
             top_k=image_search_request.top_k,
@@ -83,7 +81,7 @@ def search_pinecone(embedding, image_search_request):
         if not query_results:
             return {"error": "No results found"}
 
-        results = {"similar_images": [], "vectors": []} if image_search_request.return_vectors else {"similar_images": []} 
+        results = {"similar_images": [], "vectors": []} if image_search_request.return_vectors else {"similar_images": []}
         for match in query_results["matches"]:
             results["similar_images"].append({
                 "id": match.id,
@@ -94,7 +92,7 @@ def search_pinecone(embedding, image_search_request):
                 results["vectors"].append(match.values)
 
         return results
-    
+
     except Exception as e:
         logging.error(e)
         return {"error": f"error querying pinecone: {str(e)}"}

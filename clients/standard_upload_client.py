@@ -60,7 +60,7 @@ print(f"Job ID: {job_id}")
 # poll the server for the job status
 url = f"http://localhost:8000/jobs/{job_id}/status"
 job_status = None
-while job_status != "COMPLETED" and job_status != "FAILED":
+while job_status not in ["COMPLETED", "FAILED"]:
     headers = {
         "Authorization": internal_api_key,
     }

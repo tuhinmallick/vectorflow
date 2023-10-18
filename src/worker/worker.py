@@ -34,9 +34,9 @@ def process_batch(batch_id, source_data):
     job = safe_db_operation(job_service.get_job, batch.job_id)
 
     # TODO: update this logic once the batch creation logic is moved out of the API
-    if job.job_status == JobStatus.NOT_STARTED or job.job_status == JobStatus.CREATING_BATCHES:
+    if job.job_status in [JobStatus.NOT_STARTED, JobStatus.CREATING_BATCHES]:
         safe_db_operation(job_service.update_job_status, job.id, JobStatus.PROCESSING_BATCHES)
-    
+
     if batch.batch_status == BatchStatus.NOT_STARTED:
         safe_db_operation(batch_service.update_batch_status, batch.id, BatchStatus.PROCESSING)
     else:
@@ -49,14 +49,13 @@ def process_batch(batch_id, source_data):
     embeddings_type = batch.embeddings_metadata.embeddings_type
     if embeddings_type == EmbeddingsType.OPEN_AI:
         try:
-            text_embeddings_list = embed_openai_batch(batch, chunked_data)
-            if text_embeddings_list:
+            if text_embeddings_list := embed_openai_batch(batch, chunked_data):
                 if job.webhook_url and job.webhook_key:
                     logging.info(f"Sending {len(text_embeddings_list)} embeddings to webhook {job.webhook_url}")
                     response = send_embeddings_to_webhook(text_embeddings_list, job)
                     process_webhook_response(response, job.id, batch.id)
                 else:
-                    upload_to_vector_db(batch_id, text_embeddings_list)  
+                    upload_to_vector_db(batch_id, text_embeddings_list)
             else:
                 logging.error(f"Failed to get OPEN AI embeddings for batch {batch.id}. Adding batch to retry queue.")
                 update_batch_status(batch.job_id, BatchStatus.FAILED, batch.id)
@@ -92,23 +91,25 @@ def get_openai_embedding(batch_of_chunks, attempts=5):
 def embed_openai_batch(batch, chunked_data):
     logging.info("Starting Open AI Embeddings")
     openai.api_key = os.getenv('EMBEDDING_API_KEY')
-    
+
     # Maximum number of items allowed in a batch by OpenAIs embedding API. There is also an 8191 token per item limit
     open_ai_batches = create_upload_batches(chunked_data, max_batch_size=config.MAX_OPENAI_EMBEDDING_BATCH_SIZE)
-    text_embeddings_list = list()
+    text_embeddings_list = []
 
     with ThreadPoolExecutor(max_workers=config.MAX_THREADS_OPENAI) as executor:
         futures = [executor.submit(get_openai_embedding, chunk) for chunk in open_ai_batches]
         for future in as_completed(futures):
             chunks, embeddings = future.result()
             if embeddings is not None:
-                for text, embedding in zip(chunks, embeddings):
-                    text_embeddings_list.append((text, embedding['embedding']))
+                text_embeddings_list.extend(
+                    (text, embedding['embedding'])
+                    for text, embedding in zip(chunks, embeddings)
+                )
             else:
                 logging.error(f"Failed to get embedding for chunk {chunks}. Adding batch to retry queue.")
                 update_batch_status(batch.job_id, BatchStatus.Failed, batch.id)
                 return
-    
+
     logging.info("Open AI Embeddings completed successfully")
     return text_embeddings_list
 
@@ -180,9 +181,8 @@ def validate_chunks(chunked_data, chunk_validation_url):
 
         if response.status_code == 200 and response.json()['valid_chunks']:
             return response.json()['valid_chunks']
-        else:
-            logging.error(f"Chunk validation failed for url {chunk_validation_url}")
-            return None
+        logging.error(f"Chunk validation failed for url {chunk_validation_url}")
+        return None
     except requests.exceptions.Timeout:
         logging.error(f"Chunk validation timed out for url {chunk_validation_url}.")
         return None
@@ -249,8 +249,10 @@ def chunk_by_sentence(data_chunks, chunk_size, overlap):
     return sentence_chunks
 
 def create_upload_batches(batches, max_batch_size):
-    open_ai_batches = [batches[i:i + max_batch_size] for i in range(0, len(batches), max_batch_size)]
-    return open_ai_batches
+    return [
+        batches[i : i + max_batch_size]
+        for i in range(0, len(batches), max_batch_size)
+    ]
 
 def update_batch_status(job_id, batch_status, batch_id):
     try:

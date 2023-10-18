@@ -37,8 +37,7 @@ def embed_image(image_bytes):
 
     # Get a vector from img2vec, returned as a torch FloatTensor
     vector_tensor = img2vec.get_vec(img, tensor=True)
-    embedding_list = transform_vector_to_list(vector_tensor)
-    return embedding_list
+    return transform_vector_to_list(vector_tensor)
 
 def transform_vector_to_list(vector):
     squeezed_tensor = vector.squeeze()
@@ -46,31 +45,28 @@ def transform_vector_to_list(vector):
     return numpy_array.tolist()
 
 def create_pinecone_source_chunk_dict(embedding, job_id, filename):
-    upsert_list = []
-    upsert_list.append(
-            {"id": generate_uuid_from_tuple((job_id, filename)), 
-            "values": embedding, 
-            "metadata": {"source_document": filename}})       
-    return upsert_list
+    return [
+        {
+            "id": generate_uuid_from_tuple((job_id, filename)),
+            "values": embedding,
+            "metadata": {"source_document": filename},
+        }
+    ]
 
 def create_qdrant_source_chunk_dict(embedding, job_id, source_filename):
-    upsert_list = []
-    upsert_list.append(
-            PointStruct(
-                id=generate_uuid_from_tuple((job_id, source_filename)),
-                vector=embedding,
-                payload={"source_document": source_filename}
-            ))
-    return upsert_list
+    return [
+        PointStruct(
+            id=generate_uuid_from_tuple((job_id, source_filename)),
+            vector=embedding,
+            payload={"source_document": source_filename},
+        )
+    ]
 
 def create_milvus_source_chunk_dict(embedding, job_id, source_filename):
-    ids = []
     source_texts = []
-    embeddings = []
-    source_filenames = []
-    ids.append(generate_uuid_from_tuple((job_id, source_filename)))
-    embeddings.append(embedding)
-    source_filenames.append(source_filename)    
+    ids = [generate_uuid_from_tuple((job_id, source_filename))]
+    embeddings = [embedding]
+    source_filenames = [source_filename]
     return [ids, source_texts, embeddings, source_filenames]
 
 def write_image_embeddings_to_weaviate(embedding, vector_db_metadata, job_id, source_filename):
@@ -81,11 +77,11 @@ def write_image_embeddings_to_weaviate(embedding, vector_db_metadata, job_id, so
 
     index = client.schema.get()
     class_list = [class_dict["class"] for class_dict in index["classes"]]
-    if not index or not vector_db_metadata.index_name in class_list:
+    if not index or vector_db_metadata.index_name not in class_list:
         logging.error(f"Collection {vector_db_metadata.index_name} does not exist at cluster URL {vector_db_metadata.environment}")
         return None
-    
-    logging.info(f"Starting Weaviate upsert for image vector")
+
+    logging.info("Starting Weaviate upsert for image vector")
     try:
         with client.batch(batch_size=config.PINECONE_BATCH_SIZE, dynamic=True, num_workers=2) as batch:
             properties = {
@@ -98,12 +94,12 @@ def write_image_embeddings_to_weaviate(embedding, vector_db_metadata, job_id, so
                 vector_db_metadata.index_name,
                 vector=embedding
             )
-                
+
     except Exception as e:
         logging.error('Error writing embeddings to weaviate: %s', e)
         return None
-    
-    logging.info(f"Successfully uploaded image vector to Weaviate")
+
+    logging.info("Successfully uploaded image vector to Weaviate")
     return 1
 
 def write_embeddings_to_vector_db(embedding, vector_db_metadata, job_id):
@@ -125,18 +121,18 @@ def write_embeddings_to_vector_db(embedding, vector_db_metadata, job_id):
         logging.error('Unsupported vector DB type: %s', vector_db_metadata.vector_db_type.value)
 
 def upload_embeddings(embedding, job):
-    vectors_uploaded = write_embeddings_to_vector_db(embedding, job.vector_db_metadata, job.id)
-
-    if vectors_uploaded:
+    if vectors_uploaded := write_embeddings_to_vector_db(
+        embedding, job.vector_db_metadata, job.id
+    ):
         safe_db_operation(job_service.update_job_status, job.id, JobStatus.COMPLETED)
     else:
         safe_db_operation(job_service.update_job_status, job.id, JobStatus.FAILED)
 
 def process_image(image_bytes, job_id):
     job = safe_db_operation(job_service.get_job_with_vdb_metadata, job_id)
-        
+
     # TODO: update this logic once the batch creation logic is moved out of the API
-    if job.job_status == JobStatus.NOT_STARTED or job.job_status == JobStatus.CREATING_BATCHES:
+    if job.job_status in [JobStatus.NOT_STARTED, JobStatus.CREATING_BATCHES]:
         safe_db_operation(job_service.update_job_status, job.id, JobStatus.PROCESSING_BATCHES)
 
     try:

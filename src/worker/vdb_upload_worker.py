@@ -41,9 +41,9 @@ def upload_batch(batch_id, text_embeddings_list):
         logging.info(f"Retrying vector db upload of batch {batch.id}")
 
     batch = safe_db_operation(batch_service.get_batch, batch_id)
-    vectors_uploaded = write_embeddings_to_vector_db(text_embeddings_list, batch.vector_db_metadata, batch.id, batch.job_id)
-
-    if vectors_uploaded:
+    if vectors_uploaded := write_embeddings_to_vector_db(
+        text_embeddings_list, batch.vector_db_metadata, batch.id, batch.job_id
+    ):
         status = safe_db_operation(batch_service.update_batch_status_with_successful_minibatch, batch.id)
         update_batch_and_job_status(batch.job_id, status, batch.id)
     else:
@@ -74,13 +74,17 @@ def write_embeddings_to_vector_db(text_embeddings_list, vector_db_metadata, batc
         logging.error('Unsupported vector DB type: %s', vector_db_metadata.vector_db_type.value)
 
 def create_pinecone_source_chunk_dict(text_embeddings_list, batch_id, job_id, source_filename):
-    upsert_list = []
-    for i, (source_text, embedding) in enumerate(text_embeddings_list):
-        upsert_list.append(
-            {"id": generate_uuid_from_tuple((job_id, batch_id, i)), 
-            "values": embedding, 
-            "metadata": {"source_text": source_text, "source_document": source_filename}})
-    return upsert_list
+    return [
+        {
+            "id": generate_uuid_from_tuple((job_id, batch_id, i)),
+            "values": embedding,
+            "metadata": {
+                "source_text": source_text,
+                "source_document": source_filename,
+            },
+        }
+        for i, (source_text, embedding) in enumerate(text_embeddings_list)
+    ]
 
 def write_embeddings_to_pinecone(upsert_list, vector_db_metadata):
     pinecone_api_key = os.getenv('VECTOR_DB_KEY')
@@ -146,16 +150,17 @@ def write_embeddings_to_redis(upsert_list, vector_db_metadata):
     return len(res)
 
 def create_qdrant_source_chunk_dict(text_embeddings_list, batch_id, job_id, source_filename):
-    upsert_list = []
-    for i, (source_text, embedding) in enumerate(text_embeddings_list):
-        upsert_list.append(
-            PointStruct(
-                id=generate_uuid_from_tuple((job_id, batch_id, i)),
-                vector=embedding,
-                payload={"source_text": source_text, "source_document": source_filename}
-            )
+    return [
+        PointStruct(
+            id=generate_uuid_from_tuple((job_id, batch_id, i)),
+            vector=embedding,
+            payload={
+                "source_text": source_text,
+                "source_document": source_filename,
+            },
         )
-    return upsert_list
+        for i, (source_text, embedding) in enumerate(text_embeddings_list)
+    ]
 
 def write_embeddings_to_qdrant(upsert_list, vector_db_metadata):
     qdrant_client = QdrantClient(
@@ -196,10 +201,10 @@ def write_embeddings_to_weaviate(text_embeddings_list, vector_db_metadata,  batc
 
     index = client.schema.get()
     class_list = [class_dict["class"] for class_dict in index["classes"]]
-    if not index or not vector_db_metadata.index_name in class_list:
+    if not index or vector_db_metadata.index_name not in class_list:
         logging.error(f"Collection {vector_db_metadata.index_name} does not exist at cluster URL {vector_db_metadata.environment}")
         return None
-    
+
     logging.info(f"Starting Weaviate upsert for {len(text_embeddings_list)} vectors")
     try:
         with client.batch(batch_size=config.PINECONE_BATCH_SIZE, dynamic=True, num_workers=2) as batch:
@@ -218,7 +223,7 @@ def write_embeddings_to_weaviate(text_embeddings_list, vector_db_metadata,  batc
     except Exception as e:
         logging.error('Error writing embeddings to weaviate: %s', e)
         return None
-    
+
     logging.info(f"Successfully uploaded {len(text_embeddings_list)} vectors to Weaviate")
     return len(text_embeddings_list)
 
@@ -266,17 +271,15 @@ def write_embeddings_to_milvus(upsert_list, vector_db_metadata):
     return vectors_uploaded
 
 def create_lancedb_source_chunks(text_embeddings_list, batch_id, job_id, source_filename):
-    upsert_list = []
-    for i, (source_text, embedding) in enumerate(text_embeddings_list):
-        upsert_list.append(
-            {
-                "id": generate_uuid_from_tuple((job_id, batch_id, i)),
-                "vector": embedding,
-                "source_text": source_text, 
-                "source_document": source_filename
-            }
-        )
-    return upsert_list
+    return [
+        {
+            "id": generate_uuid_from_tuple((job_id, batch_id, i)),
+            "vector": embedding,
+            "source_text": source_text,
+            "source_document": source_filename,
+        }
+        for i, (source_text, embedding) in enumerate(text_embeddings_list)
+    ]
 
 def write_embeddings_to_lancedb(upsert_list, batch_id):
     # right now only local connection, since its serverless and their cloud is in beta
