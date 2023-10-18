@@ -241,9 +241,10 @@ class TestWorker(unittest.TestCase):
         self.assertEqual(len(chunks), 4)
 
     def test_chunk_paragraph_overlap(self):
-        data = ["This is an example paragraph. With a second example sentence.\n\n"]
-        data.append("This is an example paragraph. With a second example sentence")
-
+        data = [
+            "This is an example paragraph. With a second example sentence.\n\n",
+            "This is an example paragraph. With a second example sentence",
+        ]
         chunks = worker.chunk_data_by_paragraph(data, chunk_size=10, overlap=2)
         # these are the ninth and tenth tokens in the example
         expected_overlap = ' second example'
@@ -277,7 +278,7 @@ class TestWorker(unittest.TestCase):
 
         #these are the ninth and tenth tokens in the example
         expected_overlap = ' longer so'
-        self.assertEqual(chunks[1][0:10], expected_overlap)
+        self.assertEqual(chunks[1][:10], expected_overlap)
 
 
 

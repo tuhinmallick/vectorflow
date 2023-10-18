@@ -28,11 +28,25 @@ class EmbeddingsMetadata(Base):
     @staticmethod
     def _from_request(request):
         embeddings_metadata_dict = json.loads(request.form.get('EmbeddingsMetadata'))
-        embeddings_metadata = EmbeddingsMetadata(
-            embeddings_type = EmbeddingsType[embeddings_metadata_dict['embeddings_type']], 
-            chunk_size = embeddings_metadata_dict['chunk_size'] if 'chunk_size' in embeddings_metadata_dict else 512,
-            chunk_overlap = embeddings_metadata_dict['chunk_overlap'] if 'chunk_overlap' in embeddings_metadata_dict else 256,
-            chunk_strategy = embeddings_metadata_dict['chunk_strategy'] if 'chunk_strategy' in embeddings_metadata_dict else ChunkStrategy.EXACT,
-            docker_image = embeddings_metadata_dict['docker_image'] if 'docker_image' in embeddings_metadata_dict else None,
-            hugging_face_model_name = embeddings_metadata_dict['hugging_face_model_name'] if 'hugging_face_model_name' in embeddings_metadata_dict else None)
-        return embeddings_metadata
+        return EmbeddingsMetadata(
+            embeddings_type=EmbeddingsType[
+                embeddings_metadata_dict['embeddings_type']
+            ],
+            chunk_size=embeddings_metadata_dict['chunk_size']
+            if 'chunk_size' in embeddings_metadata_dict
+            else 512,
+            chunk_overlap=embeddings_metadata_dict['chunk_overlap']
+            if 'chunk_overlap' in embeddings_metadata_dict
+            else 256,
+            chunk_strategy=embeddings_metadata_dict['chunk_strategy']
+            if 'chunk_strategy' in embeddings_metadata_dict
+            else ChunkStrategy.EXACT,
+            docker_image=embeddings_metadata_dict['docker_image']
+            if 'docker_image' in embeddings_metadata_dict
+            else None,
+            hugging_face_model_name=embeddings_metadata_dict[
+                'hugging_face_model_name'
+            ]
+            if 'hugging_face_model_name' in embeddings_metadata_dict
+            else None,
+        )

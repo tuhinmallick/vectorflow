@@ -23,18 +23,18 @@ class VectorDBMetadata(Base):
     @staticmethod
     def _from_request(request):
         vector_db_metadata_dict = json.loads(request.form.get('VectorDBMetadata'))
-        vector_db_metadata = VectorDBMetadata(
-            vector_db_type = VectorDBType[vector_db_metadata_dict['vector_db_type']], 
-            index_name = vector_db_metadata_dict['index_name'], 
-            environment = vector_db_metadata_dict['environment'],
-            collection = vector_db_metadata_dict.get('collection',''))
-        return vector_db_metadata
+        return VectorDBMetadata(
+            vector_db_type=VectorDBType[vector_db_metadata_dict['vector_db_type']],
+            index_name=vector_db_metadata_dict['index_name'],
+            environment=vector_db_metadata_dict['environment'],
+            collection=vector_db_metadata_dict.get('collection', ''),
+        )
     
     @staticmethod
     def _from_dict(vdb_dict):
-        vector_db_metadata = VectorDBMetadata(
-            vector_db_type = VectorDBType[vdb_dict['vector_db_type']], 
-            index_name = vdb_dict['index_name'], 
-            environment = vdb_dict['environment'],
-            collection = vdb_dict.get('collection',''))
-        return vector_db_metadata
+        return VectorDBMetadata(
+            vector_db_type=VectorDBType[vdb_dict['vector_db_type']],
+            index_name=vdb_dict['index_name'],
+            environment=vdb_dict['environment'],
+            collection=vdb_dict.get('collection', ''),
+        )

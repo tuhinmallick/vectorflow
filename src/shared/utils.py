@@ -9,7 +9,7 @@ def generate_uuid_from_tuple(t, namespace_uuid='6ba7b810-9dad-11d1-80b4-00c04fd4
     return str(unique_uuid)
 
 def str_to_bool(value):
-    return str(value).lower() in ["true", "1", "yes"]
+    return str(value).lower() in {"true", "1", "yes"}
 
 def send_embeddings_to_webhook(text_embeddings_list, job):
     headers = {
@@ -24,10 +24,4 @@ def send_embeddings_to_webhook(text_embeddings_list, job):
         'JobID': job.id
     }
 
-    response = requests.post(
-        job.webhook_url, 
-        headers=headers, 
-        json=data
-    )
-
-    return response
+    return requests.post(job.webhook_url, headers=headers, json=data)

@@ -145,7 +145,7 @@ class TestApp(unittest.TestCase):
         file_content = "test\n" * 2048
 
         # act
-        chunks = [chunk for chunk in app.split_file(file_content)]
+        chunks = list(app.split_file(file_content))
 
         # assert
         self.assertEqual(len(chunks), 3)
