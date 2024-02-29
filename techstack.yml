@@ -1,0 +1,2001 @@
+repo_name: tuhinmallick/vectorflow
+report_id: 3627559a582e3954ab650d583581336f
+version: 0.1
+repo_type: Public
+timestamp: '2024-02-29T20:08:21+00:00'
+requested_by: kpriver55
+provider: github
+branch: main
+detected_tools_count: 135
+tools:
+- name: Jinja
+  description: Full featured template engine for Python
+  website_url: https://palletsprojects.com/p/jinja/
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Templating Languages & Extensions
+  image_url: https://img.stackshare.io/service/2303/New_Project__20_.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: David Garnitz
+  last_updated_on: 2023-07-30 15:40:13.000000000 Z
+- name: Python
+  description: A clear and powerful object-oriented programming language, comparable
+    to Perl, Ruby, Scheme, or Java.
+  website_url: https://www.python.org
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/993/pUBY5pVj.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow
+  detection_source: Repo Metadata
+- name: Matplotlib
+  description: A plotting library for the Python programming language
+  website_url: http://matplotlib.org
+  open_source: false
+  hosted_saas: false
+  category: Libraries
+  sub_category: Charting Libraries
+  image_url: https://img.stackshare.io/service/2993/2DZC4KaA_400x400.jpg
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: Protobuf
+  description: Google's data interchange format
+  website_url: https://developers.google.com/protocol-buffers/
+  version: 4.24.3
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Serialization Frameworks
+  image_url: https://img.stackshare.io/service/4393/ma2jqJKH_400x400.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: Minio
+  description: AWS S3 open source alternative written in Go
+  website_url: https://minio.io/
+  version: 7.1.16
+  license: AGPL-3.0
+  open_source: true
+  hosted_saas: false
+  category: Data Stores
+  sub_category: Cloud Storage
+  image_url: https://img.stackshare.io/service/4485/gTawkyAA.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/images/requirements.txt
+  detection_source: src/images/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-09-26 07:29:03.000000000 Z
+- name: PostgreSQL
+  description: A powerful, open source object-relational database system
+  website_url: http://www.postgresql.org/
+  open_source: true
+  hosted_saas: false
+  category: Data Stores
+  sub_category: Databases
+  image_url: https://img.stackshare.io/service/1028/ASOhU5xJ.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/docker-compose.yml
+  detection_source: docker-compose.yml
+  last_updated_by: David Garnitz
+  last_updated_on: 2023-08-08 23:29:11.000000000 Z
+- name: RabbitMQ
+  description: Open source multiprotocol messaging broker
+  website_url: http://www.rabbitmq.com/
+  open_source: true
+  hosted_saas: false
+  category: Data Stores
+  sub_category: Message Queue
+  image_url: https://img.stackshare.io/service/1061/default_df93e9a30d27519161b39d8c1d5c223c1642d187.jpg
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/docker-compose.yml
+  detection_source: docker-compose.yml
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-09-06 06:09:46.000000000 Z
+- name: Redis
+  description: Open source (BSD licensed), in-memory data structure store
+  website_url: http://redis.io/
+  version: 5.0.0
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Data Stores
+  sub_category: In-Memory Databases
+  image_url: https://img.stackshare.io/service/1031/default_cbce472cd134adc6688572f999e9122b9657d4ba.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/worker/requirements.txt
+  detection_source: src/worker/requirements.txt
+  last_updated_by: Youdiowei Eteimorde
+  last_updated_on: 2023-09-30 23:21:19.000000000 Z
+- name: SQLAlchemy
+  description: The Python SQL Toolkit and Object Relational Mapper
+  website_url: http://www.sqlalchemy.org/
+  version: 2.0.19
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Data Stores
+  sub_category: Object Relational Mapper (ORM)
+  image_url: https://img.stackshare.io/service/1839/q5uAkmy7.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: David Garnitz
+  last_updated_on: 2023-08-03 21:51:44.000000000 Z
+- name: Docker
+  description: Enterprise Container Platform for High-Velocity Innovation.
+  website_url: https://www.docker.com/
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Virtual Machine Platforms & Containers
+  image_url: https://img.stackshare.io/service/586/n4u37v9t_400x400.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow
+  detection_source: Repo Metadata
+- name: Git
+  description: Fast, scalable, distributed revision control system
+  website_url: http://git-scm.com/
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Version Control System
+  image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow
+  detection_source: Repo Metadata
+- name: PyPI
+  description: A repository of software for the Python programming language
+  website_url: https://pypi.org/
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Hosted Package Repository
+  image_url: https://img.stackshare.io/service/12572/-RIWgodF_400x400.jpg
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/worker/requirements.txt
+  detection_source: src/worker/requirements.txt
+  last_updated_by: David Garnitz
+  last_updated_on: 2023-07-30 15:38:54.000000000 Z
+- name: OpenCV
+  description: Open Source Computer Vision Library
+  website_url: http://opencv.org/
+  open_source: true
+  hosted_saas: false
+  category: Assets and Media
+  sub_category: Image Processing and Management
+  image_url: https://img.stackshare.io/service/1293/opencv-logo-64x64.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: David Garnitz
+  last_updated_on: 2023-07-30 15:40:13.000000000 Z
+- name: Pandoc
+  description: A universal document converter
+  website_url: https://pandoc.org/
+  open_source: true
+  hosted_saas: false
+  category: Assets and Media
+  sub_category: File Conversion
+  image_url: https://img.stackshare.io/service/2330/no-img-open-source.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: Pillow
+  description: Python Imaging Library
+  website_url: https://python-pillow.github.io/
+  open_source: true
+  hosted_saas: false
+  category: Assets and Media
+  sub_category: Image Processing and Management
+  image_url: https://img.stackshare.io/service/2375/default_1f67b0ca7416a9f52beb655f90b5602d5ef74b75.jpg
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: NumPy
+  description: Fundamental package for scientific computing with Python
+  website_url: http://www.numpy.org/
+  version: 1.26.0
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Data Science Tools
+  image_url: https://img.stackshare.io/service/2179/default_332f874a2edb2686f578aa6389313efcea1eec41.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: David Garnitz
+  last_updated_on: 2023-07-30 15:40:13.000000000 Z
+- name: OpenAI
+  description: Creating safe AGI that benefits all
+  website_url: https://openai.com/
+  version: 0.28.1
+  open_source: false
+  hosted_saas: false
+  category: Communications
+  sub_category: Large Language Models
+  image_url: https://img.stackshare.io/service/48786/default_8b1119bcbb159cebebc2f6cfc9cd2e359b169d22.jpg
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: David Garnitz
+  last_updated_on: 2023-07-30 15:40:13.000000000 Z
+- name: Pinecone
+  description: Build high-performance vector search applications
+  website_url: https://www.pinecone.io/
+  version: 2.2.4
+  open_source: false
+  hosted_saas: false
+  category: Application Utilities
+  sub_category: Search as a Service
+  image_url: https://img.stackshare.io/service/48784/default_376332a8eee1cdbb0546ca1aaed0b8a7f4d673d7.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/images/requirements.txt
+  detection_source: src/images/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-09-26 07:29:03.000000000 Z
+- name: Qdrant
+  description: Open-source Vector Search Engine and Vector Database written in Rust
+  website_url: https://qdrant.tech/
+  open_source: true
+  hosted_saas: false
+  category: Application Utilities
+  sub_category: Search Engines
+  image_url: https://img.stackshare.io/service/48298/default_d234d62c02c7862d4384fbbf0bcbb94ff723df73.jpg
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/docker-compose.yml
+  detection_source: docker-compose.yml
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-09-03 02:07:40.000000000 Z
+- name: SciPy
+  description: Scientific Computing Tools for Python
+  website_url: http://www.scipy.org
+  version: 1.11.2
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: Data Science Tools
+  image_url: https://img.stackshare.io/service/3303/scipyshiny_small.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: David Garnitz
+  last_updated_on: 2023-07-30 15:40:13.000000000 Z
+- name: Shell
+  description: A shell is a text-based terminal, used for manipulating programs and
+    files. Shell scripts typically manage program execution.
+  website_url: https://en.wikipedia.org/wiki/Shell_script
+  open_source: false
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/4631/default_c2062d40130562bdc836c13dbca02d318205a962.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow
+  detection_source: Repo Metadata
+- name: Torch
+  description: An open-source machine learning library and a script language based
+    on the Lua programming language
+  website_url: http://torch.ch/
+  open_source: true
+  hosted_saas: false
+  category: Application Utilities
+  sub_category: Machine Learning Tools
+  image_url: https://img.stackshare.io/service/4475/hpYQzO_U_400x400.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: Authlib
+  description: The ultimate Python library in building OAuth and OpenID Connect servers
+  package_url: https://pypi.org/project/Authlib
+  version: 1.2.1
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/20752/default_cf2c193a97e2b1ce404093ff2bc569ddeeeb005b.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/images/requirements.txt
+  detection_source: src/images/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-09-26 07:29:03.000000000 Z
+- name: Flask
+  description: A simple framework for building complex web applications
+  package_url: https://pypi.org/project/Flask
+  version: 2.3.2
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19834/default_58dbe7b4d7ec447b62773209af0f9a31bbabf5bd.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: David Garnitz
+  last_updated_on: 2023-07-30 15:40:13.000000000 Z
+- name: Flask-Cors
+  description: A Flask extension adding a decorator for CORS support
+  package_url: https://pypi.org/project/Flask-Cors
+  version: 4.0.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19977/default_29192d68c64b1a3be468b1b73c2a129fc390c4f4.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: David Garnitz
+  last_updated_on: 2023-07-30 15:40:13.000000000 Z
+- name: Mako
+  description: A super-fast templating language that borrows the best ideas from the
+    existing templating languages
+  package_url: https://pypi.org/project/Mako
+  version: 1.2.4
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19969/default_1c8812e05cf754e8f654b8d86b3f025827f5bfb6.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: David Garnitz
+  last_updated_on: 2023-08-21 02:28:34.000000000 Z
+- name: Markdown
+  description: Python implementation of Markdown
+  package_url: https://pypi.org/project/Markdown
+  version: 3.4.4
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19908/default_67f813d4aac73d024261bcfded6ef2b918e384a0.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: MarkupSafe
+  description: Safely add untrusted strings to HTML/XML markup
+  package_url: https://pypi.org/project/MarkupSafe
+  version: 2.1.3
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19945/default_0b0a94e1bdf3e64deeccb23892ca2335bdc30e4f.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: PyMuPDF
+  description: Python bindings for the PDF rendering library MuPDF
+  package_url: https://pypi.org/project/PyMuPDF
+  version: 1.22.5
+  license: AGPL-3.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/pypi/image.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: David Garnitz
+  last_updated_on: 2023-08-14 19:26:58.000000000 Z
+- name: PyYAML
+  description: YAML parser and emitter for Python
+  package_url: https://pypi.org/project/PyYAML
+  version: 6.0.1
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19829/default_74a61b43bdb9fc0cba2978316b9976f43545029b.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: David Garnitz
+  last_updated_on: 2023-08-16 17:34:58.000000000 Z
+- name: Werkzeug
+  description: The comprehensive WSGI web application library
+  package_url: https://pypi.org/project/Werkzeug
+  version: 2.3.6
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19890/default_87fc2af3f2409064833512bb6fc5b04443a2e6aa.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: David Garnitz
+  last_updated_on: 2023-07-30 15:40:13.000000000 Z
+- name: XlsxWriter
+  description: A Python module for creating Excel XLSX files
+  package_url: https://pypi.org/project/XlsxWriter
+  version: 3.1.4
+  license: BSD-2-Clause
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/20009/default_01ad0299ca69c7b3e7fb7fee7a49e261bc9d294a.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: aiohttp
+  description: Async http client/server framework
+  package_url: https://pypi.org/project/aiohttp
+  version: 3.8.5
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19852/default_d748224707283d9d8a73c2323730c87bda6b313a.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+  vulnerabilities:
+  - name: aiohttp's ClientSession is vulnerable to CRLF injection via version
+    cve_id: CVE-2023-49081
+    cve_url: https://github.com/advisories/GHSA-q3qx-c6g2-7pw2
+    detected_date: Nov 28
+    severity: high
+    first_patched: 3.9.0
+  - name: aiohttp is vulnerable to directory traversal
+    cve_id: CVE-2024-23334
+    cve_url: https://github.com/advisories/GHSA-5h86-8mv2-jq9f
+    detected_date: Jan 30
+    severity: moderate
+    first_patched: 3.9.2
+  - name: AIOHTTP has problems in HTTP parser (the python one, not llhttp)
+    cve_id: CVE-2023-47627
+    cve_url: https://github.com/advisories/GHSA-gfw2-4jvh-wgfg
+    detected_date: Nov 15
+    severity: moderate
+    first_patched: 3.8.6
+  - name: aiohttp has vulnerable dependency that is vulnerable to request smuggling
+    cve_id: 
+    cve_url: https://github.com/advisories/GHSA-pjjw-qhg8-p2p9
+    detected_date: Nov 29
+    severity: moderate
+    first_patched: 3.8.6
+  - name: aiohttp's ClientSession is vulnerable to CRLF injection via method
+    cve_id: CVE-2023-49082
+    cve_url: https://github.com/advisories/GHSA-qvrw-v9rv-5rjx
+    detected_date: Nov 28
+    severity: moderate
+    first_patched: 3.9.0
+  - name: aiohttp's HTTP parser (the python one, not llhttp) still overly lenient
+      about separators
+    cve_id: CVE-2024-23829
+    cve_url: https://github.com/advisories/GHSA-8qpw-xqxj-h4r2
+    detected_date: Jan 30
+    severity: moderate
+    first_patched: 3.9.2
+- name: alembic
+  description: A database migration tool for SQLAlchemy
+  package_url: https://pypi.org/project/alembic
+  version: 1.11.3
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19961/default_61e35171bd9c0e5c5b88b2e4221ca242576ad8c0.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: David Garnitz
+  last_updated_on: 2023-08-21 02:28:34.000000000 Z
+- name: antlr4-python3-runtime
+  description: ANTLR 4.7.2 runtime for Python 3.6.3
+  package_url: https://pypi.org/project/antlr4-python3-runtime
+  version: 4.9.3
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/pypi/image.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: anyio
+  description: High level compatibility layer for multiple asynchronous event loop
+    implementations
+  package_url: https://pypi.org/project/anyio
+  version: 3.7.1
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/20757/default_c1e4fc9b7faffe723aa1e18d3dd3049b39849e4d.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: argcomplete
+  description: Bash tab completion for argparse
+  package_url: https://pypi.org/project/argcomplete
+  version: 3.1.1
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19928/default_bb29140b72c0fb9789e567bba0ef0ffadeaef5d4.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: David Garnitz
+  last_updated_on: 2023-08-16 17:34:58.000000000 Z
+- name: async-timeout
+  description: Timeout context manager for asyncio programs
+  package_url: https://pypi.org/project/async-timeout
+  version: 4.0.3
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/20820/default_33e8d7fbba8bfff26ed0101b65f3a3af5fd63b4e.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: attrs
+  description: Classes Without Boilerplate
+  package_url: https://pypi.org/project/attrs
+  version: 23.1.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19857/default_4a8a8fdc10130068bf295812b98e9b72fb42fe70.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: beautifulsoup4
+  description: Screen-scraping library
+  package_url: https://pypi.org/project/beautifulsoup4
+  version: 4.12.2
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19838/default_85689b353a3a9409328e253ea28d859d29151e0c.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: blinker
+  description: Fast, simple object-to-object and broadcast signaling
+  package_url: https://pypi.org/project/blinker
+  version: 1.6.2
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/20273/default_847617f8273bac4dd5921370b0684f29c3397a68.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: David Garnitz
+  last_updated_on: 2023-07-30 15:40:13.000000000 Z
+- name: boto3
+  description: The AWS SDK for Python
+  package_url: https://pypi.org/project/boto3
+  version: 1.28.27
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19840/default_1c41e593803157c668b26f27387160254f0f5371.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: David Garnitz
+  last_updated_on: 2023-08-16 17:34:58.000000000 Z
+- name: botocore
+  description: Low-level, data-driven core of boto 3
+  package_url: https://pypi.org/project/botocore
+  version: 1.31.27
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19884/default_b8be3f20d4af87021ae3618d5c50b72c985ea31f.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: cachetools
+  description: Extensible memoizing collections and decorators
+  package_url: https://pypi.org/project/cachetools
+  version: 5.3.1
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19950/default_611a1328f69b729fac0a7b8bf87ff04e8ce35e17.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/worker/requirements.txt
+  detection_source: src/worker/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-09 16:41:54.000000000 Z
+- name: certifi
+  description: Python package for providing Mozilla's CA Bundle
+  package_url: https://pypi.org/project/certifi
+  version: 2023.7.22
+  license: MPL-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19849/default_75c38a39b9f0062814489e2ec2cbfca0ca15d9ba.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: David Garnitz
+  last_updated_on: 2023-08-16 17:34:58.000000000 Z
+- name: cffi
+  description: Foreign Function Interface for Python calling C code
+  package_url: https://pypi.org/project/cffi
+  version: 1.15.1
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19909/default_67f813d4aac73d024261bcfded6ef2b918e384a0.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: cfn-flip
+  description: Convert AWS CloudFormation templates between JSON and YAML formats
+  package_url: https://pypi.org/project/cfn-flip
+  version: 1.3.0
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/pypi/image.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: David Garnitz
+  last_updated_on: 2023-08-16 17:34:58.000000000 Z
+- name: chardet
+  description: Universal encoding detector for Python 2 and 3
+  package_url: https://pypi.org/project/chardet
+  version: 5.2.0
+  license: LGPL-2.1
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19856/default_4a8a8fdc10130068bf295812b98e9b72fb42fe70.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: charset-normalizer
+  description: The Real First Universal Charset Detector
+  package_url: https://pypi.org/project/charset-normalizer
+  version: 3.2.0
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Package Managers
+  image_url: https://img.stackshare.io/package/pypi/image.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: click
+  description: Composable command line interface toolkit
+  package_url: https://pypi.org/project/click
+  version: 8.1.6
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19830/default_74a61b43bdb9fc0cba2978316b9976f43545029b.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: David Garnitz
+  last_updated_on: 2023-07-30 15:40:13.000000000 Z
+- name: coloredlogs
+  description: Colored terminal output for Python's logging module
+  package_url: https://pypi.org/project/coloredlogs
+  version: 15.0.1
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19966/default_08ca82e926d4333989c376f7cbf2803cef43771c.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: cryptography
+  description: Cryptography is a package which provides cryptographic recipes and
+    primitives to Python developers
+  package_url: https://pypi.org/project/cryptography
+  version: 41.0.3
+  license: BSD-3-Clause,Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19850/default_db2ab2702f70e20c272f6ce65251108fb2b8f1ea.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+  vulnerabilities:
+  - name: cryptography NULL pointer dereference with pkcs12.serialize_key_and_certificates
+      when called with a non-matching certificate and private key and an hmac_hash
+      override
+    cve_id: CVE-2024-26130
+    cve_url: https://github.com/advisories/GHSA-6vqw-3v5j-54x4
+    detected_date: Feb 22
+    severity: high
+    first_patched: 42.0.4
+  - name: Python Cryptography package vulnerable to Bleichenbacher timing oracle attack
+    cve_id: CVE-2023-50782
+    cve_url: https://github.com/advisories/GHSA-3ww4-gg4f-jr7f
+    detected_date: Feb 6
+    severity: high
+    first_patched: 42.0.0
+  - name: cryptography vulnerable to NULL-dereference when loading PKCS7 certificates
+    cve_id: CVE-2023-49083
+    cve_url: https://github.com/advisories/GHSA-jfhm-5ghh-2f97
+    detected_date: Nov 29
+    severity: moderate
+    first_patched: 41.0.6
+  - name: Null pointer dereference in PKCS12 parsing
+    cve_id: CVE-2024-0727
+    cve_url: https://github.com/advisories/GHSA-9v9h-cgj8-h64p
+    detected_date: Feb 17
+    severity: moderate
+    first_patched: 42.0.2
+  - name: Vulnerable OpenSSL included in cryptography wheels
+    cve_id: 
+    cve_url: https://github.com/advisories/GHSA-v8gr-m533-ghj9
+    detected_date: Sep 22
+    severity: low
+    first_patched: 41.0.4
+- name: dataclasses-json
+  description: Easily serialize dataclasses to and from JSON
+  package_url: https://pypi.org/project/dataclasses-json
+  version: 0.6.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/20519/default_ded6d17aa418fbd05ff28b85345c77ab878c6b37.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: decorator
+  description: Decorators for Humans
+  package_url: https://pypi.org/project/decorator
+  version: 5.1.1
+  license: BSD-2-Clause
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19911/default_bc82f0b22ca8fd942e21c317967f4ab61f43eb2c.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/worker/requirements.txt
+  detection_source: src/worker/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-09 16:41:54.000000000 Z
+- name: dnspython
+  description: DNS toolkit
+  package_url: https://pypi.org/project/dnspython
+  version: 2.4.2
+  license: Other
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/20249/default_47b8ee8db82e43d9eef35923435bd8cc855f3a1b.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/images/requirements.txt
+  detection_source: src/images/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-09-26 07:29:03.000000000 Z
+- name: emoji
+  description: Emoji for Python
+  package_url: https://pypi.org/project/emoji
+  version: 2.8.0
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/20228/default_ac3896467e151a154f15419dbab3ee7694c7ddf3.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: environs
+  description: Simplified environment variable parsing
+  package_url: https://pypi.org/project/environs
+  version: 9.5.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/20429/default_7defdc8d75243dda839b1aed62f8631f461dead1.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/images/requirements.txt
+  detection_source: src/images/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-09-26 07:29:03.000000000 Z
+- name: exceptiongroup
+  description: Backport of PEP 654
+  package_url: https://pypi.org/project/exceptiongroup
+  version: 1.1.3
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Package Managers
+  image_url: https://img.stackshare.io/package/pypi/image.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: filelock
+  description: A platform independent file lock
+  package_url: https://pypi.org/project/filelock
+  version: 3.12.4
+  license: Unlicense
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/20204/default_645e4030c04804ccf56eaad54caf7b7a73a44c64.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: flatbuffers
+  description: The FlatBuffers serialization format for Python
+  package_url: https://pypi.org/project/flatbuffers
+  version: 23.5.26
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/pypi/image.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: fonttools
+  description: Tools to manipulate font files
+  package_url: https://pypi.org/project/fonttools
+  version: 4.42.1
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/20488/default_13373c456cf04faa5b7f33cd4c4095cbd571dfce.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+  vulnerabilities:
+  - name: fonttools XML External Entity Injection (XXE) Vulnerability
+    cve_id: CVE-2023-45139
+    cve_url: https://github.com/advisories/GHSA-6673-4983-2vx5
+    detected_date: Jan 10
+    severity: high
+    first_patched: 4.43.0
+- name: fsspec
+  description: File-system specification
+  package_url: https://pypi.org/project/fsspec
+  version: 2023.9.1
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/pypi/image.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: googleapis-common-protos
+  description: Common protobufs used in Google APIs
+  package_url: https://pypi.org/project/googleapis-common-protos
+  version: 1.60.0
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/20036/default_a7a70921d2d3189665c78015850dc968f41705a1.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/images/requirements.txt
+  detection_source: src/images/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-09-26 07:29:03.000000000 Z
+- name: greenlet
+  description: Lightweight in-process concurrent programming
+  package_url: https://pypi.org/project/greenlet
+  version: 2.0.2
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/20137/default_e3ea003987b13e5c9b8c9000c748b25a9c0d9ecd.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: kpriver55
+  last_updated_on: 2023-09-16 06:22:07.000000000 Z
+- name: grpcio
+  description: HTTP/2-based RPC framework
+  package_url: https://pypi.org/project/grpcio
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19903/default_1d0eb6da6bdd342bb15f73d8f1721516ebacd1dc.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/images/requirements.txt
+  detection_source: src/images/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-09-26 07:29:03.000000000 Z
+- name: grpcio-tools
+  description: Protobuf code generator for gRPC
+  package_url: https://pypi.org/project/grpcio-tools
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/20003/default_87268cab0d3a3b3acf3aa0576d4b114b8e4c2521.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/images/requirements.txt
+  detection_source: src/images/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-09-26 07:29:03.000000000 Z
+- name: gunicorn
+  description: WSGI HTTP Server for UNIX
+  package_url: https://pypi.org/project/gunicorn
+  version: 21.2.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19931/default_74a0c20721d3a0a1484d69586401591fe8993db2.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: David Garnitz
+  last_updated_on: 2023-07-30 16:43:04.000000000 Z
+- name: h11
+  description: A pure-Python
+  package_url: https://pypi.org/project/h11
+  version: 0.14.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/pypi/image.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/images/requirements.txt
+  detection_source: src/images/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-09-26 07:29:03.000000000 Z
+- name: h2
+  description: HTTP/2 State-Machine based protocol implementation
+  package_url: https://pypi.org/project/h2
+  version: 4.1.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/20795/default_9ca241da01759150a631f1a4419765b91249245f.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/images/requirements.txt
+  detection_source: src/images/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-09-26 07:29:03.000000000 Z
+- name: httpx
+  description: The next generation HTTP client
+  package_url: https://pypi.org/project/httpx
+  version: 0.25.0
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/20315/default_5f4e928dbcb1c4db4050881fc2e0229785fc931c.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/images/requirements.txt
+  detection_source: src/images/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-09-26 07:29:03.000000000 Z
+- name: huggingface-hub
+  description: Client library to download and publish models
+  package_url: https://pypi.org/project/huggingface-hub
+  version: 0.17.2
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Package Managers
+  image_url: https://img.stackshare.io/package/pypi/image.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: humanfriendly
+  description: Human friendly output for text interfaces using Python
+  package_url: https://pypi.org/project/humanfriendly
+  version: '10.0'
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/20320/default_5f4e928dbcb1c4db4050881fc2e0229785fc931c.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: idna
+  description: Internationalized Domain Names in Applications
+  package_url: https://pypi.org/project/idna
+  version: '3.4'
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19863/default_f24e00e4cb7620e436f9d06e0305070e1335922a.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: David Garnitz
+  last_updated_on: 2023-08-16 17:34:58.000000000 Z
+- name: importlib-metadata
+  description: Read metadata from Python packages
+  package_url: https://pypi.org/project/importlib-metadata
+  version: 6.8.0
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/20000/default_7c419d5d5f0cfad7886b95266eae7ba305cedacf.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: itsdangerous
+  description: Various helpers to pass data to untrusted environments and back
+  package_url: https://pypi.org/project/itsdangerous
+  version: 2.1.2
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19989/default_b1f1fc9c4c59a78443018e01395203ba8c61dcde.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: David Garnitz
+  last_updated_on: 2023-07-30 15:40:13.000000000 Z
+- name: jmespath
+  description: JSON Matching Expressions
+  package_url: https://pypi.org/project/jmespath
+  version: 1.0.1
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19993/default_1ae269f6aa26d7008f18ed620309f6ae89bbfa12.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: joblib
+  description: 'Lightweight pipelining: using Python functions as pipeline jobs'
+  package_url: https://pypi.org/project/joblib
+  version: 1.3.2
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/20033/default_5a21cf44b42c3ef13f57dcd42ae753240ea7e808.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: jsonpatch
+  description: Apply JSON-Patches
+  package_url: https://pypi.org/project/jsonpatch
+  version: '1.33'
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/20389/default_dbae17f97e8212cfa7ac5c2981eb06a9bf0f7b40.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: jsonpointer
+  description: Identify specific nodes in a JSON document
+  package_url: https://pypi.org/project/jsonpointer
+  version: '2.4'
+  license: Zed
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/pypi/image.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: kiwisolver
+  description: A fast implementation of the Cassowary constraint solver
+  package_url: https://pypi.org/project/kiwisolver
+  version: 1.4.5
+  license: Other
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/20772/default_b92e3d801a6b8cc7a378e4f7c25f52a138a86391.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: langchain
+  description: Building applications with LLMs through composability
+  package_url: https://pypi.org/project/langchain
+  version: 0.0.309
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Package Managers
+  image_url: https://img.stackshare.io/package/pypi/image.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+  vulnerabilities:
+  - name: langchain vulnerable to arbitrary code execution
+    cve_id: CVE-2023-36281
+    cve_url: https://github.com/advisories/GHSA-7gfq-f96f-g85j
+    detected_date: Dec 8
+    severity: critical
+    first_patched: 0.0.312
+  - name: LangChain vulnerable to arbitrary code execution
+    cve_id: CVE-2023-39659
+    cve_url: https://github.com/advisories/GHSA-prgp-w7vf-ch62
+    detected_date: Dec 8
+    severity: critical
+    first_patched: 0.0.325
+  - name: Langchain Server-Side Request Forgery vulnerability
+    cve_id: CVE-2023-32786
+    cve_url: https://github.com/advisories/GHSA-6h8p-4hx9-w66c
+    detected_date: Dec 8
+    severity: high
+    first_patched: 0.0.329
+  - name: LangChain Server Side Request Forgery vulnerability
+    cve_id: CVE-2023-46229
+    cve_url: https://github.com/advisories/GHSA-655w-fm8m-m478
+    detected_date: Dec 8
+    severity: high
+    first_patched: 0.0.317
+  - name: langchain Server-Side Request Forgery vulnerability
+    cve_id: CVE-2024-0243
+    cve_url: https://github.com/advisories/GHSA-h9j7-5xvc-qhg5
+    detected_date: Feb 27
+    severity: low
+    first_patched: 0.1.0
+- name: loguru
+  description: Python logging made
+  package_url: https://pypi.org/project/loguru
+  version: 0.7.2
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/20043/default_15ea2ed8281eccea374610791971ca44800f16ec.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/images/requirements.txt
+  detection_source: src/images/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-09-26 07:29:03.000000000 Z
+- name: lxml
+  description: Powerful and Pythonic XML processing library combining libxml2/libxslt
+    with the ElementTree API
+  package_url: https://pypi.org/project/lxml
+  version: 4.9.3
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19835/default_85689b353a3a9409328e253ea28d859d29151e0c.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: kpriver55
+  last_updated_on: 2023-09-16 06:22:07.000000000 Z
+- name: lz4
+  description: LZ4 Bindings for Python
+  package_url: https://pypi.org/project/lz4
+  version: 4.3.2
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/20274/default_267c21fe20acb6a3a56ea60f8b271e1ab445049d.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/images/requirements.txt
+  detection_source: src/images/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-09-26 07:29:03.000000000 Z
+- name: marshmallow
+  description: A lightweight library for converting complex datatypes to and from
+    native Python datatypes
+  package_url: https://pypi.org/project/marshmallow
+  version: 3.20.1
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19893/default_f716e4bc541a9eb6e3f5b7a20d7c35355075b0b4.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: mpmath
+  description: Python library for arbitrary-precision floating-point arithmetic
+  package_url: https://pypi.org/project/mpmath
+  version: 1.3.0
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/pypi/image.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: multidict
+  description: Multidict implementation
+  package_url: https://pypi.org/project/multidict
+  version: 6.0.4
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/20160/default_8822b1755ae0c97a622ebcb1aa9cafa328004f81.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: nest-asyncio
+  description: Patch asyncio to allow nested event loops
+  package_url: https://pypi.org/project/nest-asyncio
+  version: 1.5.8
+  license: BSD-2-Clause
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/20756/default_3b89e4079f3032d1be4fc7657dcb47e23c973660.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: networkx
+  description: Python package for creating and manipulating graphs and networks
+  package_url: https://pypi.org/project/networkx
+  version: '3.1'
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19877/default_8902c10687fbcd6273bdbe119fff40fa1180763f.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: nltk
+  description: Natural Language Toolkit
+  package_url: https://pypi.org/project/nltk
+  version: 3.8.1
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/20023/default_b0d1a54f127d7017fce41c15f5e85568fb7019ed.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: openai
+  description: The official Python library for the openai API
+  package_url: https://pypi.org/project/openai
+  version: 0.28.1
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Package Managers
+  image_url: https://img.stackshare.io/package/pypi/image.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: opencv-python
+  description: Wrapper package for OpenCV python bindings
+  package_url: https://pypi.org/project/opencv-python
+  version: 4.8.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/pypi/image.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: openpyxl
+  description: A Python library to read/write Excel 2010 xlsx/xlsm files
+  package_url: https://pypi.org/project/openpyxl
+  version: 3.1.2
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19895/default_4343f8bba4f6051641ffca8b4fbe9b099402c84d.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: packaging
+  description: Core utilities for Python packages
+  package_url: https://pypi.org/project/packaging
+  version: '23.1'
+  license: BSD-3-Clause,Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19894/default_f716e4bc541a9eb6e3f5b7a20d7c35355075b0b4.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: pandas
+  description: Powerful data structures for data analysis
+  package_url: https://pypi.org/project/pandas
+  version: 2.1.0
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19837/default_85689b353a3a9409328e253ea28d859d29151e0c.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: pdf2image
+  description: A wrapper around the pdftoppm and pdftocairo command line tools to
+    convert PDF to a PIL Image list
+  package_url: https://pypi.org/project/pdf2image
+  version: 1.16.3
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/pypi/image.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: pdfminer.six
+  description: PDF parser and analyzer
+  package_url: https://pypi.org/project/pdfminer.six
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/20347/default_19b737f8f858a0bc83d9eee02c6d810fabdc8056.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: pika
+  description: Pika Python AMQP Client Library
+  package_url: https://pypi.org/project/pika
+  version: 1.3.2
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19997/default_1ae269f6aa26d7008f18ed620309f6ae89bbfa12.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: David Garnitz
+  last_updated_on: 2023-08-08 23:29:11.000000000 Z
+- name: portalocker
+  description: Wraps the portalocker recipe for easy usage
+  package_url: https://pypi.org/project/portalocker
+  version: 2.8.2
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/20277/default_267c21fe20acb6a3a56ea60f8b271e1ab445049d.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: psycopg2-binary
+  description: Psycopg2 - Python-PostgreSQL Database Adapter
+  package_url: https://pypi.org/project/psycopg2-binary
+  version: 2.9.6
+  license: BSD-3-Clause-Attribution
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/pypi/image.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: David Garnitz
+  last_updated_on: 2023-08-03 21:51:44.000000000 Z
+- name: py
+  description: Library with cross-python path
+  package_url: https://pypi.org/project/py
+  version: 1.11.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19962/default_61e35171bd9c0e5c5b88b2e4221ca242576ad8c0.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/worker/requirements.txt
+  detection_source: src/worker/requirements.txt
+  last_updated_by: David Garnitz
+  last_updated_on: 2023-07-30 15:38:54.000000000 Z
+  vulnerabilities:
+  - name: 'ReDoS in py library when used with subversion '
+    cve_id: CVE-2022-42969
+    cve_url: https://github.com/advisories/GHSA-w596-4wvx-j9j6
+    detected_date: Oct 18
+    severity: high
+    first_patched: 
+- name: pyarrow
+  description: Python library for Apache Arrow
+  package_url: https://pypi.org/project/pyarrow
+  version: 13.0.0
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/20366/default_20f72d65682b6cad9939bcf162d0ef14fced900c.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/worker/requirements.txt
+  detection_source: src/worker/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-09 16:41:54.000000000 Z
+  vulnerabilities:
+  - name: 'PyArrow: Arbitrary code execution when loading a malicious data file'
+    cve_id: CVE-2023-47248
+    cve_url: https://github.com/advisories/GHSA-5wvp-7f3h-6wmm
+    detected_date: Nov 10
+    severity: critical
+    first_patched: 14.0.1
+- name: pycparser
+  description: C parser in Python
+  package_url: https://pypi.org/project/pycparser
+  version: '2.21'
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/20072/default_d7fc4eabe57370d13c2a8ad2f7f6bb876c96c66d.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: pydantic
+  description: Data validation and settings management using python 3.6 type hinting
+  package_url: https://pypi.org/project/pydantic
+  version: 2.4.2
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/20022/default_b0d1a54f127d7017fce41c15f5e85568fb7019ed.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: pypandoc
+  description: Thin wrapper for pandoc
+  package_url: https://pypi.org/project/pypandoc
+  version: '1.11'
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/20206/default_f49d415fc34d42446135e0f46315fb237c002e80.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: pyparsing
+  description: Python parsing module
+  package_url: https://pypi.org/project/pyparsing
+  version: 3.1.1
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19881/default_2270bfab784e3d2c2d999d26b11ee478a9dad238.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: pytesseract
+  description: Python-tesseract is a python wrapper for Google's Tesseract-OCR
+  package_url: https://pypi.org/project/pytesseract
+  version: 0.3.10
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/20381/default_135579e95b2b6e219789a65aaca198fa4c877f7a.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: python-dateutil
+  description: Extensions to the standard Python datetime module
+  package_url: https://pypi.org/project/python-dateutil
+  version: 2.8.2
+  license: NRL
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19833/default_58dbe7b4d7ec447b62773209af0f9a31bbabf5bd.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: python-docx
+  description: Create and update Microsoft Word .docx files
+  package_url: https://pypi.org/project/python-docx
+  version: 0.8.11
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/pypi/image.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: python-dotenv
+  description: Add .env support to your django/flask apps in development and deployments
+  package_url: https://pypi.org/project/python-dotenv
+  version: 1.0.0
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/20095/default_3141eabecdd8efa55de73a33c43f2ac0d5bbf954.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/images/requirements.txt
+  detection_source: src/images/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-09-26 07:29:03.000000000 Z
+- name: python-magic
+  description: File type identification using libmagic
+  package_url: https://pypi.org/project/python-magic
+  version: 0.4.27
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/20245/default_79c7a01488eebdf30ca22b7316d9f77bbe7fad8b.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: python-slugify
+  description: A Python Slugify application that handles Unicode
+  package_url: https://pypi.org/project/python-slugify
+  version: 8.0.1
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19986/default_aa331bbc48e2faa54aa26e08880b772595f833b8.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: pytz
+  description: World timezone definitions, modern and historical
+  package_url: https://pypi.org/project/pytz
+  version: '2023.3'
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19841/default_bb711fa267b2329ed689711a5adb7d9e74610b20.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/worker/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: regex
+  description: Alternative regular expression module, to replace re
+  package_url: https://pypi.org/project/regex
+  version: 2023.8.8
+  license: Python-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19923/default_c8be5290cb8d8a8b578535a2c6475d1057ff4ea4.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: requests
+  description: Python HTTP for Humans
+  package_url: https://pypi.org/project/requests
+  version: 2.31.0
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19826/default_d7c684bf2673f008a9f02ac93901229297a22d7e.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: David Garnitz
+  last_updated_on: 2023-08-16 17:34:58.000000000 Z
+- name: s3transfer
+  description: An Amazon S3 Transfer Manager
+  package_url: https://pypi.org/project/s3transfer
+  version: 0.6.2
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/20042/default_15ea2ed8281eccea374610791971ca44800f16ec.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: scikit-learn
+  description: A set of python modules for machine learning and data mining
+  package_url: https://pypi.org/project/scikit-learn
+  version: 1.3.0
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19898/default_4343f8bba4f6051641ffca8b4fbe9b099402c84d.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/hugging_face/requirements.txt
+  detection_source: src/hugging_face/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-09-06 06:09:46.000000000 Z
+- name: semver
+  description: Python helper for Semantic Versioning
+  package_url: https://pypi.org/project/semver
+  version: 3.0.1
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19960/default_61e35171bd9c0e5c5b88b2e4221ca242576ad8c0.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/worker/requirements.txt
+  detection_source: src/worker/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-09 16:41:54.000000000 Z
+- name: six
+  description: Python 2 and 3 compatibility utilities
+  package_url: https://pypi.org/project/six
+  version: 1.16.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19827/default_74a61b43bdb9fc0cba2978316b9976f43545029b.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: David Garnitz
+  last_updated_on: 2023-07-30 15:40:13.000000000 Z
+- name: soupsieve
+  description: A modern CSS selector implementation for Beautiful Soup
+  package_url: https://pypi.org/project/soupsieve
+  version: '2.5'
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/20367/default_f96848c380cbdcec99ab678e027c29229da52205.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: sympy
+  description: Computer algebra system
+  package_url: https://pypi.org/project/sympy
+  version: '1.12'
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19976/default_29192d68c64b1a3be468b1b73c2a129fc390c4f4.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: tabulate
+  description: Pretty-print tabular data
+  package_url: https://pypi.org/project/tabulate
+  version: 0.9.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19864/default_7975a21f3bf03129dc3bc4168cf7cb7ee2cc14cc.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: tenacity
+  description: Retry code until it succeeds
+  package_url: https://pypi.org/project/tenacity
+  version: 8.2.3
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/20027/default_fd02050783f95269bfcc5c4d11f1c75dd423cd1d.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: text-unidecode
+  description: The most basic Text::Unidecode port
+  package_url: https://pypi.org/project/text-unidecode
+  version: '1.3'
+  license: Artistic-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/pypi/image.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: David Garnitz
+  last_updated_on: 2023-08-16 17:34:58.000000000 Z
+- name: toml
+  description: Python Library for Tom's Obvious, Minimal Language
+  package_url: https://pypi.org/project/toml
+  version: 0.10.2
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19912/default_bc82f0b22ca8fd942e21c317967f4ab61f43eb2c.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: David Garnitz
+  last_updated_on: 2023-08-16 17:34:58.000000000 Z
+- name: torchvision
+  description: Image and video datasets and models for torch deep learning
+  package_url: https://pypi.org/project/torchvision
+  version: 0.15.2
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/20377/default_86c41789cbd5dc6b872b122419740f58f5d2f18a.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: tqdm
+  description: Fast, Extensible Progress Meter
+  package_url: https://pypi.org/project/tqdm
+  version: 4.66.1
+  license: MPL-2.0,MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19846/default_accee5d2b8ed75c2245f13504daf75b1cbc8cc9f.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: David Garnitz
+  last_updated_on: 2023-08-16 17:34:58.000000000 Z
+- name: troposphere
+  description: AWS CloudFormation creation library
+  package_url: https://pypi.org/project/troposphere
+  version: 4.4.0
+  license: BSD-2-Clause
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/20292/default_fbb28b4e332d257da7e7f1277d3ce073b5270511.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: David Garnitz
+  last_updated_on: 2023-08-16 17:34:58.000000000 Z
+- name: typing-inspect
+  description: Runtime inspection utilities for typing module
+  package_url: https://pypi.org/project/typing-inspect
+  version: 0.9.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/pypi/image.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: ujson
+  description: Ultra fast JSON encoder and decoder for Python
+  package_url: https://pypi.org/project/ujson
+  version: 5.8.0
+  license: DSDP
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/20357/default_1e2908ef2614eb1bb39298a5fc937d8c068f3a2c.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/images/requirements.txt
+  detection_source: src/images/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-09-26 07:29:03.000000000 Z
+- name: urllib3
+  description: HTTP library with thread-safe connection pooling
+  package_url: https://pypi.org/project/urllib3
+  version: 1.26.16
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19842/default_4604ff5dcb7f4d9c7b3833591c2142493951b19c.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: David Garnitz
+  last_updated_on: 2023-08-16 17:34:58.000000000 Z
+  vulnerabilities:
+  - name: urllib3's request body not stripped after redirect from 303 status changes
+      request method to GET
+    cve_id: CVE-2023-45803
+    cve_url: https://github.com/advisories/GHSA-g4mx-q9vg-27p4
+    detected_date: Oct 18
+    severity: moderate
+    first_patched: 1.26.18
+  - name: "`Cookie` HTTP header isn't stripped on cross-origin redirects"
+    cve_id: CVE-2023-43804
+    cve_url: https://github.com/advisories/GHSA-v845-jxx5-vc9f
+    detected_date: Oct 3
+    severity: moderate
+    first_patched: 1.26.17
+- name: validators
+  description: Python Data Validation for Humans™
+  package_url: https://pypi.org/project/validators
+  version: 0.22.0
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/19964/default_61e35171bd9c0e5c5b88b2e4221ca242576ad8c0.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/images/requirements.txt
+  detection_source: src/images/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-09-26 07:29:03.000000000 Z
+- name: xlrd
+  description: Library for developers to extract data from Microsoft Excel
+  package_url: https://pypi.org/project/xlrd
+  version: 2.0.1
+  license: BSD-3-Clause
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/20182/default_3d320a0aa731f16ceb0e7b6999ca7f7cd784aee2.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: yarl
+  description: Yet another URL library
+  package_url: https://pypi.org/project/yarl
+  version: 1.9.2
+  license: Apache-2.0
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/20083/default_d8789f2f1b5b4e9994bef68371453a20460b4d6e.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: dgarnitz
+  last_updated_on: 2023-10-06 18:43:14.000000000 Z
+- name: zipp
+  description: Backport of pathlib-compatible object wrapper for zip files
+  package_url: https://pypi.org/project/zipp
+  version: 3.16.2
+  license: MIT
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: PyPI Packages
+  image_url: https://img.stackshare.io/package/20247/default_47b8ee8db82e43d9eef35923435bd8cc855f3a1b.png
+  detection_source_url: https://github.com/tuhinmallick/vectorflow/blob/main/src/api/requirements.txt
+  detection_source: src/api/requirements.txt
+  last_updated_by: David Garnitz
+  last_updated_on: 2023-07-30 15:40:13.000000000 Z
