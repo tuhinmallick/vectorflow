@@ -62,7 +62,7 @@ Full tech stack [here](/techstack.md)
 # Tech Stack File
 ![](https://img.stackshare.io/repo.svg "repo") [tuhinmallick/vectorflow](https://github.com/tuhinmallick/vectorflow)![](https://img.stackshare.io/public_badge.svg "public")
 <br/><br/>
-|135<br/>Tools used|02/19/24 <br/>Report generated|
+|135<br/>Tools used|02/29/24 <br/>Report generated|
 |------|------|
 </div>
 
@@ -308,7 +308,7 @@ Full tech stack [here](/techstack.md)
 |[charset-normalizer](https://pypi.org/project/charset-normalizer)|v3.2.0|10/06/23|dgarnitz |N/A|N/A|
 |[click](https://pypi.org/project/click)|v8.1.6|07/30/23|David Garnitz |BSD-3-Clause|N/A|
 |[coloredlogs](https://pypi.org/project/coloredlogs)|v15.0.1|10/06/23|dgarnitz |MIT|N/A|
-|[cryptography](https://pypi.org/project/cryptography)|v41.0.3|10/06/23|dgarnitz |BSD-3-Clause,Apache-2.0|[CVE-2023-50782](https://github.com/advisories/GHSA-3ww4-gg4f-jr7f) (High)<br/>[CVE-2024-0727](https://github.com/advisories/GHSA-9v9h-cgj8-h64p) (Moderate)<br/>[CVE-2023-49083](https://github.com/advisories/GHSA-jfhm-5ghh-2f97) (Moderate)<br/>[](https://github.com/advisories/GHSA-v8gr-m533-ghj9) (Low)|
+|[cryptography](https://pypi.org/project/cryptography)|v41.0.3|10/06/23|dgarnitz |BSD-3-Clause,Apache-2.0|[CVE-2024-26130](https://github.com/advisories/GHSA-6vqw-3v5j-54x4) (High)<br/>[CVE-2023-50782](https://github.com/advisories/GHSA-3ww4-gg4f-jr7f) (High)<br/>[CVE-2023-49083](https://github.com/advisories/GHSA-jfhm-5ghh-2f97) (Moderate)<br/>[CVE-2024-0727](https://github.com/advisories/GHSA-9v9h-cgj8-h64p) (Moderate)<br/>[](https://github.com/advisories/GHSA-v8gr-m533-ghj9) (Low)|
 |[dataclasses-json](https://pypi.org/project/dataclasses-json)|v0.6.0|10/06/23|dgarnitz |MIT|N/A|
 |[decorator](https://pypi.org/project/decorator)|v5.1.1|10/09/23|dgarnitz |BSD-2-Clause|N/A|
 |[dnspython](https://pypi.org/project/dnspython)|v2.4.2|09/26/23|dgarnitz |Other|N/A|
@@ -337,7 +337,7 @@ Full tech stack [here](/techstack.md)
 |[jsonpatch](https://pypi.org/project/jsonpatch)|v1.33|10/06/23|dgarnitz |BSD-3-Clause|N/A|
 |[jsonpointer](https://pypi.org/project/jsonpointer)|v2.4|10/06/23|dgarnitz |Zed|N/A|
 |[kiwisolver](https://pypi.org/project/kiwisolver)|v1.4.5|10/06/23|dgarnitz |Other|N/A|
-|[langchain](https://pypi.org/project/langchain)|v0.0.309|10/06/23|dgarnitz |N/A|[CVE-2023-39659](https://github.com/advisories/GHSA-prgp-w7vf-ch62) (Critical)<br/>[CVE-2023-36281](https://github.com/advisories/GHSA-7gfq-f96f-g85j) (Critical)<br/>[CVE-2023-46229](https://github.com/advisories/GHSA-655w-fm8m-m478) (High)<br/>[CVE-2023-32786](https://github.com/advisories/GHSA-6h8p-4hx9-w66c) (High)|
+|[langchain](https://pypi.org/project/langchain)|v0.0.309|10/06/23|dgarnitz |N/A|[CVE-2023-36281](https://github.com/advisories/GHSA-7gfq-f96f-g85j) (Critical)<br/>[CVE-2023-39659](https://github.com/advisories/GHSA-prgp-w7vf-ch62) (Critical)<br/>[CVE-2023-32786](https://github.com/advisories/GHSA-6h8p-4hx9-w66c) (High)<br/>[CVE-2023-46229](https://github.com/advisories/GHSA-655w-fm8m-m478) (High)<br/>[CVE-2024-0243](https://github.com/advisories/GHSA-h9j7-5xvc-qhg5) (Low)|
 |[loguru](https://pypi.org/project/loguru)|v0.7.2|09/26/23|dgarnitz |MIT|N/A|
 |[lxml](https://pypi.org/project/lxml)|v4.9.3|09/16/23|kpriver55 |BSD-3-Clause|N/A|
 |[lz4](https://pypi.org/project/lz4)|v4.3.2|09/26/23|dgarnitz |BSD-3-Clause|N/A|
